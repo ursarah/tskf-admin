@@ -3,6 +3,7 @@ import { MdCancel } from "react-icons/md";
 import ActionBtn from "../actionsbtn";
 
 interface dataAlunos {
+    contagem_aluno?: number,
     id?: number,
     nome?: string,
     telefone?: string,
@@ -15,10 +16,10 @@ export default async function Table() {
     // const dataAlunos: dataAlunos[] = await data.json()
 
     const dataAlunos: dataAlunos[] = [
-        { 'id': 1, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
-        { 'id': 2, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
-        { 'id': 3, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
-        { 'id': 4, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
+        { 'id': 5, 'contagem_aluno': 1, 'nome': 'dfaddf', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
+        { 'id': 7, 'contagem_aluno': 2, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
+        { 'id': 2, 'contagem_aluno': 3, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
+        { 'id': 9, 'contagem_aluno': 4, 'nome': 'dfad', 'email': 'skdfja@dfa', 'telefone': 'efrewfw', 'bairro': 'wdkfaw' },
     ]
 
 
@@ -31,34 +32,28 @@ export default async function Table() {
 
             :
 
-            <table>
-                <thead>
-                    <tr>
-                        <th className="px-13">#</th>
-                        <th className="px-13">Nome aluno</th>
-                        <th className="px-13">Telefone</th>
-                        <th className="px-13">Email</th>
-                        <th className="px-13">Bairro</th>
-                        <th className="px-13">Ações</th>
-                    </tr>
-                    <tr className="mt-3 bg-gray-400 absolute after:content-[''] after:opacity-70 after:block w-[100%] h-[1px]"></tr>
-                </thead>
-                <tbody className="pt-5">
-                    {!dataAlunos && <tr><td>Loading...</td></tr>}
-                    {dataAlunos && dataAlunos.map((aluno) => (
-                        <tr key={aluno.id}>
-                            <th className="py-5 px-13">{aluno.id}</th>
-                            <td className="py-5 px-13">{aluno.nome}</td>
-                            <td className="py-5 px-13">{aluno.telefone}</td>
-                            <td className="py-5 px-13">{aluno.email}</td>
-                            <td className="py-5 px-13">{aluno.bairro}</td>
-                            <td className="px-13">
-                                <ActionBtn id={aluno.id} />
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>}
+            <div>
+                <ul className="grid grid-cols-6 mb-5 font-bold">
+                    <li className="px-13">#</li>
+                    <li className="px-13">Nome </li>
+                    <li className="px-13">Telefone</li>
+                    <li className="px-13">Email</li>
+                    <li className="px-13">Bairro</li>
+                    <li className="px-13">Ações</li>
+                </ul>
+                {dataAlunos && dataAlunos.map((aluno) => (
+                    <ul className="grid grid-cols-6 items-center" key={aluno.id} >
+                        <li className="py-5 px-13 font-bold">{aluno.contagem_aluno}</li>
+                        <li className="py-5 px-13">{aluno.nome}</li>
+                        <li className="py-5 px-13">{aluno.telefone}</li>
+                        <li className="py-5 px-13">{aluno.email}</li>
+                        <li className="py-5 px-13">{aluno.bairro}</li>
+                        <li className="px-13">
+                            <ActionBtn id={aluno.id} />
+                        </li>
+                    </ul>
+                ))}
+            </div>}
         </>
     );
 }

@@ -19,7 +19,7 @@ export default function Dashboard() {
                         </p>
                     </Link>
                 </nav>
-                <div className="bg-white relative rounded-md py-5">
+                <div className="bg-white rounded-md px-5 py-6">
                     <SearchBtn />
                     <Table />
                 </div>

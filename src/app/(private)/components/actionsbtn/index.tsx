@@ -1,9 +1,10 @@
 'use client'
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { MdOutlineEdit } from "react-icons/md";
 
-interface BtnProps {
+export interface BtnProps {
     id?: number
 }
 export default function ActionBtn({ id }: BtnProps) {
@@ -27,7 +28,9 @@ export default function ActionBtn({ id }: BtnProps) {
             <FaRegTrashCan />
         </button>
         <button className="bg-emerald-500 p-2 ml-1 rounded-md text-gray-100 cursor-pointer">
-            <MdOutlineEdit />
+            <Link href={`/edit/${id}`}>
+                <MdOutlineEdit />
+            </Link>
         </button>
     </>
     );
