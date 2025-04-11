@@ -12,6 +12,7 @@ interface dados {
 
 export default function Cadastro() {
     const [status, setStatus] = useState<boolean | null>(null)
+    const url: string = 'https://admin-server-production-1330.up.railway.app/'
 
     async function fetchCadastro(formData: FormData) {
         const dados: dados = {
@@ -21,7 +22,7 @@ export default function Cadastro() {
             bairro: formData.get('bairro'),
         };
 
-        const res = await fetch('http://localhost:5000', {
+        const res = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

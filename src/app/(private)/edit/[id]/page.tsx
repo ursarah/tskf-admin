@@ -11,6 +11,8 @@ import { BtnProps } from "../../components/actionsbtn";
 import { useState } from "react";
 
 export default function Edit({ params }: { params: Promise<{ id: BtnProps }> }) {
+
+    const url: string = 'https://admin-server-production-1330.up.railway.app/edit/'
     const [status, setStatus] = useState('')
 
     async function fetchEdit(formData: FormData) {
@@ -21,7 +23,7 @@ export default function Edit({ params }: { params: Promise<{ id: BtnProps }> }) 
             email: formData.get('email'),
             bairro: formData.get('bairro'),
         };
-        const res = await fetch(`http://localhost:5000/edit/${id}`, {
+        const res = await fetch(url + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

@@ -8,10 +8,12 @@ export interface BtnProps {
     id?: number
 }
 export default function ActionBtn({ id }: BtnProps) {
+
+    const url: string = 'https://admin-server-production-1330.up.railway.app/delete/'
     const router = useRouter()
 
     async function handleDelete(id: number | undefined) {
-        await fetch(`http://localhost:5000/delete/${id}`, {
+        await fetch(url + id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
