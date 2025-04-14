@@ -10,6 +10,7 @@ export interface BtnProps {
 export default function ActionBtn({ id }: BtnProps) {
 
     const url: string = 'https://admin-server-production-1330.up.railway.app/delete/'
+    // const url: string = 'http://localhost:5000/delete/'
     const router = useRouter()
 
     async function handleDelete(id: number | undefined) {

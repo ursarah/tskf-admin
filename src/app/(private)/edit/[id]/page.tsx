@@ -13,6 +13,7 @@ import { useState } from "react";
 export default function Edit({ params }: { params: Promise<{ id: BtnProps }> }) {
 
     const url: string = 'https://admin-server-production-1330.up.railway.app/edit/'
+    // const url: string = 'http://localhost:5000/edit/'
     const [status, setStatus] = useState('')
 
     async function fetchEdit(formData: FormData) {

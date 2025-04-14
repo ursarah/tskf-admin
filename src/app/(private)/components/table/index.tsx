@@ -14,6 +14,8 @@ interface dataAlunos {
 
 export default function Table() {
     const url: string = 'https://admin-server-production-1330.up.railway.app/'
+    // const url: string = 'http://localhost:5000/'
+
     const [dataAlunos, setDataAlunos] = useState<dataAlunos[]>([])
 
     useEffect(() => {

@@ -13,6 +13,7 @@ interface dados {
 export default function Cadastro() {
     const [status, setStatus] = useState<boolean | null>(null)
     const url: string = 'https://admin-server-production-1330.up.railway.app/'
+    // const url: string = 'http://localhost:5000/'
 
     async function fetchCadastro(formData: FormData) {
         const dados: dados = {
